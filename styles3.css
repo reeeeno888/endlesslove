@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFB6C1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Ensure positioning context for buttons */
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.country {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.country img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.country p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.country:hover img {
+    transform: scale(1.1);
+}
+
+.country:hover p {
+    color: #007bff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust spacing between buttons */
+    margin-top: 20px;
+}
+
+#musicButton {
+    background-color: #3498db; /* Style for the music button */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#musicButton:hover {
+    background-color: #2980b9; /* Darker shade for hover effect */
+}
+
+#nextPageButton {
+    background-color: #3498db; /* Style for the Next button */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#nextPageButton:hover {
+    background-color: #2980b9; /* Darker shade for hover effect */
+}
+
+audio {
+    display: none; /* Hide audio player */
+}

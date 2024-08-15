@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <link rel="stylesheet" href="willyoumarryme.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Will you marry me?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+        <div class="button-container">
+            <button id="musicButton" onclick="toggleMusic()">Play Music</button>
+        </div>
+    </div>
+
+    <audio id="background-music" src="lana.mp3" loop></audio>
+
+    <script>
+        function nextPage() {
+            window.location.href = "ilyindex.html";
+        }
+        
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+    
+        const audio = document.getElementById('background-music');
+        const musicButton = document.getElementById('musicButton');
+    
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                musicButton.textContent = 'Pause Music';
+            } else {
+                audio.pause();
+                musicButton.textContent = 'Play Music';
+            }
+        }
+    
+        // Ensure the music plays automatically after user interaction
+        document.addEventListener('DOMContentLoaded', (event) => {
+            audio.play().catch((error) => {
+                console.log('Autoplay was prevented:', error);
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+        });
+    </script>
+</body>
+</html>

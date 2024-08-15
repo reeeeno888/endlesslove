@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeymoon Destinations</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose the Perfect for Our Special Journey Together</h1>
+        <p>Find the ideal destination for our unforgettable honeymoon adventure.</p>
+        
+        <audio id="background-music" autoplay loop>
+            <source src="BelongTogther.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="country-grid">
+            <a href="indexlove.html" class="country">
+                <img src="japan.jfif" alt="Japan">
+                <p>Japan</p>
+            </a>
+            <a href="indexlove.html" class="country">
+                <img src="italy.jfif" alt="Italy">
+                <p>Italy</p>
+            </a>
+            <a href="indexlove.html" class="country">
+                <img src="switzerland.jfif" alt="Switzerland">
+                <p>Switzerland</p>
+            </a>
+            <a href="indexlove.html" class="country">
+                <img src="maldives.jfif" alt="Maldives">
+                <p>Maldives</p>
+            </a>
+            <a href="indexlove.html" class="country">
+                <img src="Hawaii.jfif" alt="Hawaii">
+                <p>Hawaii</p>
+            </a>
+            <a href="indexlove.html" class="country">
+                <img src="Greece.jfif" alt="Greece">
+                <p>Greece</p>
+            </a>
+        </div>
+
+        <div class="button-container">
+            <button id="musicButton" onclick="toggleMusic()">Play Music</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-music');
+            const musicButton = document.getElementById('musicButton');
+    
+            if (audio && musicButton) {
+                musicButton.addEventListener('click', toggleMusic);
+    
+                function toggleMusic() {
+                    if (audio.paused) {
+                        audio.play();
+                        musicButton.textContent = 'Pause Music';
+                    } else {
+                        audio.pause();
+                        musicButton.textContent = 'Play Music';
+                    }
+                }
+            } else {
+                console.error('Element IDs "background-music" or "musicButton" not found.');
+            }
+        });
+    </script>
+    
+</body>
+</html>
+
